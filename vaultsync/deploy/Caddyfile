@@ -1,0 +1,8 @@
+# Caddy auto-provisions a free Let's Encrypt TLS certificate for $DOMAIN and
+# reverse-proxies to the control-panel (which serves the SPA and proxies /api).
+# $DOMAIN is supplied via the caddy container's environment (see docker-compose.caddy.yml).
+
+{$DOMAIN} {
+	encode gzip zstd
+	reverse_proxy control-panel:80
+}

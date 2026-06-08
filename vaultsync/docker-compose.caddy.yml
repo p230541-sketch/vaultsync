@@ -1,0 +1,30 @@
+# HTTPS front door for a free single-VM deployment.
+# Combine with the base + production overlays:
+#
+#   docker compose -f docker-compose.yml \
+#                  -f docker-compose.prod.yml \
+#                  -f docker-compose.caddy.yml up -d --build
+#
+# Requires a .env with at least: DOMAIN, JWT_SECRET, POSTGRES_PASSWORD, NODE_ENV.
+# Caddy fetches and renews a free Let's Encrypt certificate automatically; the
+# VM must have ports 80 and 443 open and DOMAIN must resolve to its public IP.
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN to your public hostname (e.g. you.duckdns.org)}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - control-panel
+
+volumes:
+  caddy-data:
+  caddy-config:
