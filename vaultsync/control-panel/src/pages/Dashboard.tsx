@@ -10,7 +10,7 @@ import { ConfirmModal } from "../components/ConfirmModal";
 import { Spinner } from "../components/Spinner";
 import { useToast } from "../components/Toast";
 import { useAuth } from "../auth/AuthContext";
-import { formatHMS } from "../lib/format";
+import { formatHMS, formatBytes } from "../lib/format";
 import { secondsUntilNextRun } from "../lib/cron";
 
 const PRIMARY_NODE = "us-east-prod-01";
@@ -74,7 +74,9 @@ export function Dashboard() {
   const passCount = backups.filter((b) => b.status === "pass").length;
   const failCount = backups.filter((b) => b.status === "fail" || b.status === "critical_failure").length;
   const allHealthy = failCount === 0 && backups.length > 0;
-  const totalBytes = backups.reduce((s, b) => s + (b.db_size_bytes ?? 0), 0);
+  // db_size_bytes is a Postgres BIGINT, which arrives as a string — coerce to a
+  // number so this sums instead of string-concatenating (which produced "Infinity TB").
+  const totalBytes = backups.reduce((s, b) => s + Number(b.db_size_bytes ?? 0), 0);
 
   // Real KPI derivations
   const activeNodes = nodes.filter((n) => n.status === "connected").length;
@@ -176,7 +178,7 @@ export function Dashboard() {
           />
           <KpiCard
             label="Total Data Secured"
-            value={totalBytes >= 1e12 ? (totalBytes / 1e12).toFixed(1) + " TB" : (totalBytes / 1e9).toFixed(1) + " GB"}
+            value={totalBytes ? formatBytes(totalBytes) : "—"}
             sub="Across all zones"
             accentColor={colors.blue}
             icon={<Database size={16} />}

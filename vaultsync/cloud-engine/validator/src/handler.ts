@@ -79,12 +79,12 @@ export async function handler(event: { Records: S3EventRecord[] }): Promise<void
       if (latencyMs > prefs.latencySlaMs) {
         const msg = `Validation latency ${latencyMs}ms exceeded ${prefs.latencySlaMs}ms SLA for ${nodeId}.`;
         await insertAlert("warning", "backup_latency", msg, nodeId).catch(() => {});
-        sendEmail(prefs.alertEmail, `[VaultSync] Latency SLA breach on ${nodeId}`, msg);
+        sendEmail(prefs.alertEmail, `[Restora] Latency SLA breach on ${nodeId}`, msg);
       }
       if (prefs.notifyOnSuccess) {
         const msg = `Backup validated for ${nodeId} (checksum ${checksum.slice(0, 8)}).`;
         await insertAlert("info", "backup_success", msg, nodeId).catch(() => {});
-        sendEmail(prefs.alertEmail, `[VaultSync] Backup succeeded on ${nodeId}`, msg);
+        sendEmail(prefs.alertEmail, `[Restora] Backup succeeded on ${nodeId}`, msg);
       }
     } catch (err: any) {
       const latencyMs = Date.now() - startTime;
@@ -103,7 +103,7 @@ export async function handler(event: { Records: S3EventRecord[] }): Promise<void
       if (prefs.notifyOnFailure) {
         const msg = `Backup FAILED for ${nodeId}: ${err.message}`;
         await insertAlert("critical", "backup_failure", msg, nodeId).catch(() => {});
-        sendEmail(prefs.alertEmail, `[VaultSync] CRITICAL: backup failed on ${nodeId}`, msg);
+        sendEmail(prefs.alertEmail, `[Restora] CRITICAL: backup failed on ${nodeId}`, msg);
       }
     } finally {
       // Always destroy ephemeral DB (FR-7)

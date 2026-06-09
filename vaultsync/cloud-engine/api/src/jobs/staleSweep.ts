@@ -38,7 +38,7 @@ export function startStaleSweep() {
            VALUES ('warning', 'node_stale', $1, $2)`,
           [row.node_id, msg]
         );
-        emailAlert(`[VaultSync] Node ${row.node_id} disconnected`, msg);
+        emailAlert(`[Restora] Node ${row.node_id} disconnected`, msg);
         console.log(`[sweep] node ${row.node_id} marked stale`);
       }
     } catch (err: any) {
