@@ -31,6 +31,12 @@ loads the backup into it, fingerprints the actual contents to detect any corrupt
 down. You get *evidence* you can recover, not hope. Everything is surfaced on a live operations
 dashboard with auth, alerts, and an audit trail.
 
+<div align="center">
+  <img src="docs/img/dashboard.png" alt="Restora dashboard — integrity KPIs, backup-density heatmap, and live backup logs" width="860">
+  <br>
+  <em>Operations dashboard — integrity KPIs, backup-density heatmap, live backup logs, and alerting that catches failures.</em>
+</div>
+
 ---
 
 ## How it works
@@ -55,6 +61,35 @@ dashboard with auth, alerts, and an audit trail.
    order-independently, so a single changed row is caught), records the result, and drops the scratch DB.
 3. The **API** serves that telemetry to a **React dashboard** with cookie-based auth, RBAC, alerts,
    an audit trail, key rotation, and retention controls.
+
+---
+
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/img/node-detail.png" alt="Edge node detail — live CPU/RAM/disk metrics, log terminal, and manual backup trigger"><br>
+      <strong>Edge node detail.</strong> Live CPU / RAM / disk metrics, a streaming
+      backup-execution log, and a manual "trigger immediate backup" override.
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/img/alerts.png" alt="Alert history — severity and status filtering, acknowledge, stale-node and latency-SLA alerts"><br>
+      <strong>Alert history.</strong> Failure / latency-SLA / stale-node alerts with
+      severity + status filtering and acknowledgement.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/img/emergency-key.png" alt="Emergency decryption key modal — reveal, download, print, with offline-storage guidance"><br>
+      <strong>Emergency decryption key.</strong> RBAC-gated reveal / download / print
+      of the recovery key, with explicit offline-storage and rotation guidance.
+    </td>
+    <td width="50%" valign="top">
+      &nbsp;
+    </td>
+  </tr>
+</table>
 
 ---
 

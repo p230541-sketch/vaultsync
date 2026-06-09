@@ -7,6 +7,10 @@ Most backup tools tell you a file exists. Restora goes further: every backup is
 automatically decrypted into a throwaway database, integrity-checked, and torn
 down — so you have evidence you can actually recover, not just hope.
 
+![Restora dashboard](../docs/img/dashboard.png)
+
+<p align="center"><em>Operations dashboard — integrity KPIs, backup-density heatmap, live backup logs.</em></p>
+
 ---
 
 ## How it works
