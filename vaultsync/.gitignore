@@ -3,7 +3,9 @@ node_modules/
 dist/
 build/
 *.log
-spool/
+# Runtime backup spool only (top-level). Anchored with a leading slash so it does
+# NOT match the Go source package at edge-node/internal/spool/.
+/spool/
 __pycache__/
 *.pyc
 .DS_Store
