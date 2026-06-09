@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ VaultSync
+# 🛡️ Restora
 
 ### Disaster-recovery platform that doesn't just back up your data — it *proves* every backup can actually be restored.
 
@@ -23,9 +23,9 @@ The corruption, the half-written dump, the wrong encryption key — you discover
 disaster, when it's already too late. A backup you've never tested is a fire extinguisher you've
 never checked.
 
-## What VaultSync does
+## What Restora does
 
-VaultSync continuously backs up databases, encrypts them end-to-end, and — the part that matters —
+Restora continuously backs up databases, encrypts them end-to-end, and — the part that matters —
 **performs an automated test-restore of every single backup**: it spins up a throwaway database,
 loads the backup into it, fingerprints the actual contents to detect any corruption, and tears it
 down. You get *evidence* you can recover, not hope. Everything is surfaced on a live operations

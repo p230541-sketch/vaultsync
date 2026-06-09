@@ -1,4 +1,4 @@
-# VaultSync — Production Deployment Guide
+# Restora — Production Deployment Guide
 
 This is the path from the local LocalStack demo to a real AWS deployment. The
 application code does **not** change — deploying is configuration: point the same

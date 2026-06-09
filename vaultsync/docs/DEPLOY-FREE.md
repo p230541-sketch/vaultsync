@@ -1,6 +1,6 @@
-# VaultSync — Free deployment (single VM + HTTPS, $0)
+# Restora — Free deployment (single VM + HTTPS, $0)
 
-Get VaultSync **online with real HTTPS for free**, by running the whole stack
+Get Restora **online with real HTTPS for free**, by running the whole stack
 (LocalStack included, so **no AWS bill**) on one free virtual machine, with
 **Caddy** auto-provisioning a Let's Encrypt certificate.
 

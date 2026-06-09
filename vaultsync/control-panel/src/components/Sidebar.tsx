@@ -36,8 +36,8 @@ export function Sidebar() {
             <Shield size={18} color="#fff" />
           </div>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: colors.textPrimary }}>VaultSync</div>
-            <div style={{ fontSize: 11, color: colors.textSecondary }}>Enterprise Backup</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: colors.textPrimary }}>Restora</div>
+            <div style={{ fontSize: 11, color: colors.textSecondary }}>Proven Restorable</div>
           </div>
         </div>
       </div>

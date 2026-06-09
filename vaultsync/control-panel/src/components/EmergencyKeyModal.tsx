@@ -46,8 +46,8 @@ export function EmergencyKeyModal({ keyData, onClose }: Props) {
   function handleDownload() {
     try {
       downloadFile(
-        `vaultsync-key-${keyData.id}.txt`,
-        `VaultSync Emergency Decryption Key\nID: ${keyData.id}\n\n${keyData.fullKey}\n\nRotate every 90 days. Keep offline.\n`,
+        `restora-key-${keyData.id}.txt`,
+        `Restora Emergency Decryption Key\nID: ${keyData.id}\n\n${keyData.fullKey}\n\nRotate every 90 days. Keep offline.\n`,
         "text/plain"
       );
       toast.success("Key downloaded as .txt — store it offline.");

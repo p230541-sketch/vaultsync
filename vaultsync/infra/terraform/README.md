@@ -1,6 +1,6 @@
-# VaultSync — AWS infrastructure (Terraform)
+# Restora — AWS infrastructure (Terraform)
 
-Provisions the managed AWS services VaultSync needs — the real-cloud equivalent
+Provisions the managed AWS services Restora needs — the real-cloud equivalent
 of what `infra/localstack/bootstrap.sh` fakes locally.
 
 ## What it creates

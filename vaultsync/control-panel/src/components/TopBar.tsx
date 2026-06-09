@@ -150,7 +150,7 @@ export function TopBar({ title, subtitle }: Props) {
           )}
         </div>
 
-        <button onClick={() => toast.info("VaultSync support: docs.vaultsync.io · L3 on-call 24/7.")} aria-label="Help"
+        <button onClick={() => toast.info("Restora support: docs.restora.io · L3 on-call 24/7.")} aria-label="Help"
           style={{ background: "none", border: "none", cursor: "pointer", color: colors.textSecondary, display: "flex" }}>
           <HelpCircle size={18} />
         </button>

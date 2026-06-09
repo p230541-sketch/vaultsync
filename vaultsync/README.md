@@ -1,9 +1,9 @@
-# VaultSync
+# Restora
 
 **A hybrid-cloud disaster-recovery platform that backs up databases, _proves each
 backup is restorable_, and reports health — encrypted end-to-end.**
 
-Most backup tools tell you a file exists. VaultSync goes further: every backup is
+Most backup tools tell you a file exists. Restora goes further: every backup is
 automatically decrypted into a throwaway database, integrity-checked, and torn
 down — so you have evidence you can actually recover, not just hope.
 

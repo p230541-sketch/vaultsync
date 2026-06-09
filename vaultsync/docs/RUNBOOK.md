@@ -1,13 +1,13 @@
-# VaultSync — Operations Runbook
+# Restora — Operations Runbook
 
-Procedures for running VaultSync in production. The most important one is the
+Procedures for running Restora in production. The most important one is the
 **DR restore drill** — a backup you have never restored is a hope, not a backup.
 
 ---
 
 ## 1. Disaster-recovery restore drill ⭐
 
-VaultSync validates restorability automatically on every backup, but you should
+Restora validates restorability automatically on every backup, but you should
 still rehearse a **manual full restore** end-to-end before relying on it, and on a
 schedule (e.g. quarterly).
 

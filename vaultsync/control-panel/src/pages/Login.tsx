@@ -51,8 +51,8 @@ export function Login() {
             <Shield size={22} color="#fff" />
           </div>
           <div>
-            <div style={{ fontSize: 20, fontWeight: 700, color: colors.textPrimary }}>VaultSync</div>
-            <div style={{ fontSize: 12, color: colors.textSecondary }}>Enterprise Backup Control Plane</div>
+            <div style={{ fontSize: 20, fontWeight: 700, color: colors.textPrimary }}>Restora</div>
+            <div style={{ fontSize: 12, color: colors.textSecondary }}>Backups, Proven Restorable</div>
           </div>
         </div>
 
