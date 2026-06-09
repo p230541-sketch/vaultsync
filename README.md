@@ -66,6 +66,13 @@ dashboard with auth, alerts, and an audit trail.
 
 ## Screenshots
 
+<div align="center">
+  <img src="docs/img/login.png" alt="Restora login — branded split-screen with product value props beside the sign-in form" width="860"><br>
+  <em>Branded sign-in — httpOnly-cookie sessions with CSRF protection.</em>
+</div>
+
+<br>
+
 <table>
   <tr>
     <td width="50%" valign="top">
